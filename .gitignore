@@ -1,0 +1,7 @@
+*.swp
+*~
+/bin
+/log
+/vendor
+composer.lock
+bump-version.bash
