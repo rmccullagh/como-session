@@ -1,8 +1,4 @@
-<?php 
-
-
-namespace Como\Cavalry;
-
+<?php namespace Como\Cavalry;
 
 abstract class AbstractSession implements \IteratorAggregate
 {
@@ -33,15 +29,11 @@ abstract class AbstractSession implements \IteratorAggregate
 					session_name($name);
 				}
 			}
-			
 			session_start();
-			
 		}
 		
 		$this->data = &$_SESSION;
-		
 		$this->mount();
-		
 	}
 	
 	private function mount()
@@ -62,7 +54,6 @@ abstract class AbstractSession implements \IteratorAggregate
 		} else if(isset($mixed) && isset($value)) {
 			$this->data[$mixed] = $value;
 		}
-		//session_write_close();
 	}
 	
 	public function get($key)
@@ -74,6 +65,7 @@ abstract class AbstractSession implements \IteratorAggregate
 				return null;
 			}
 		}
+    return null;
 	}
 	
 	public function all() 
@@ -91,10 +83,6 @@ abstract class AbstractSession implements \IteratorAggregate
 		return session_name();
 	}
 	
-	/**
-	 * Session::destroy - Destroys all data registered to a session
-	 *
-	 */
 	public function destroy()
 	{
 		if(session_status() === PHP_SESSION_NONE) {
