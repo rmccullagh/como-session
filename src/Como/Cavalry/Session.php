@@ -1,12 +1,10 @@
-<?php
-
-namespace Como\Cavalry;
+<?php namespace Como\Cavalry;
 
 use Como\Cavalry\AbstractSession;
 
 class Session extends AbstractSession 
 {
-	const FLASH_NS = '__FLASH_DATA__';
+	const FLASH_NS = '__COMO_FLASH_DATA__';
 	
 	public function id()
 	{
@@ -31,11 +29,9 @@ class Session extends AbstractSession
 		
 		if(count($data) > 0) {
 			unset($this->data[self::FLASH_NS]);
-		    return $data;
+		  return $data;
 		}
-		
 		return false;
-		
 	}
 	
 }

@@ -102,7 +102,6 @@ abstract class AbstractSession implements \IteratorAggregate
 		session_destroy();
 	}
 	
-	
 	public function getIterator()
   {
     return new \ArrayIterator($this->data);
